@@ -3,7 +3,10 @@ Calendarclash::Application.routes.draw do
   # Static Contoller
   root "static_pages#home"
 
-
+  get  "/users",     to: "users#index", as: :users
+  post "/users",     to: "users#create"
+  get  "/users/:id", to: "user#show",   as: :user
+  get  "/users/new", to: "user#new",    as: :new_user
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
